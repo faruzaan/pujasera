@@ -15,3 +15,6 @@
     return view('welcome');
 });*/
 Route::get('/', 'ContentController@index');
+Route::get('/akun', 'AkunController@index');
+Route::get('/akun/add', 'AkunController@create');
+Route::post('/akun/add', 'AkunController@store');
