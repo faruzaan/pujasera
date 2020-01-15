@@ -42,3 +42,8 @@
 
   <!-- Page level custom scripts -->
   <script src="{{asset('assets')}}/js/demo/datatables-demo.js"></script>
+  <script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+  </script>

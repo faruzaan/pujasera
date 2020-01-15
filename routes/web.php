@@ -18,3 +18,10 @@ Route::get('/', 'ContentController@index');
 Route::get('/akun', 'AkunController@index');
 Route::get('/akun/add', 'AkunController@create');
 Route::post('/akun/add', 'AkunController@store');
+
+Route::get('akun/{id}/edit','AkunController@edit');
+Route::patch('akun/{id}/edit','AkunController@update');
+
+Route::delete('akun/{id}/delete','AkunController@destroy');
+
+Route::get('/transaksi','TransaksiController@index');

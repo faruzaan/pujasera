@@ -3,7 +3,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          @include('templates/feedback')
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tabel Akun</h1>
           <p class="mb-4">Data Informasi Akun</a>.</p>
@@ -45,8 +45,8 @@
                   		<td>{{ $row-> alamat_user }}</td>
                   		<td>{{ $row-> no_user }}</td>
                   		<td>{{ $row-> status_user }}</td>
-                  		<td><a href="{{url('akun/$row->id_user/edit')}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
-                  			<form action="{{url('akun/$row->id_user/delete')}}" method="POST" style="display: inline;">
+                  		<td><a href="{{url("akun/$row->id_user/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
+                  			<form action="{{url("akun/$row->id_user/delete")}}" method="POST" style="display: inline;">
                   				{{csrf_field()}}
                   				{{method_field('DELETE')}}
 
