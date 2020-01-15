@@ -24,8 +24,8 @@
                     <input type="text" class="form-control form-control-user" name="nama_user" id="Nama" placeholder="Nama" value="{{ @$result->nama_user }}">
                   </div>
                   <div class="col-sm-6">
-                    <input type="radio" name="jk_user" value="L" checked> Laki-Laki
-  					       <input type="radio" name="jk_user" value="P"> Perempuan
+                    <input type="radio" name="jk_user" value="L" {{(@$result->jk_user=="L")? "checked":""}}> Laki-Laki
+  					       <input type="radio" name="jk_user" value="P" {{(@$result->jk_user=="P")? "checked":""}}> Perempuan
                   </div>
                 </div>
                 <div class="form-group">

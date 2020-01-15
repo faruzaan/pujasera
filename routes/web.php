@@ -14,14 +14,18 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', 'ContentController@index');
-Route::get('/akun', 'AkunController@index');
-Route::get('/akun/add', 'AkunController@create');
-Route::post('/akun/add', 'AkunController@store');
+Route::auth();
 
-Route::get('akun/{id}/edit','AkunController@edit');
-Route::patch('akun/{id}/edit','AkunController@update');
+Route::group(['middleware'=>'auth'],function(){
+	Route::get('/', 'ContentController@index');
+	Route::get('/akun', 'AkunController@index');
+	Route::get('/akun/add', 'AkunController@create');
+	Route::post('/akun/add', 'AkunController@store');
 
-Route::delete('akun/{id}/delete','AkunController@destroy');
+	Route::get('akun/{id}/edit','AkunController@edit');
+	Route::patch('akun/{id}/edit','AkunController@update');
 
-Route::get('/transaksi','TransaksiController@index');
+	Route::delete('akun/{id}/delete','AkunController@destroy');
+
+	Route::get('/transaksi','TransaksiController@index');
+});

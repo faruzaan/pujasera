@@ -182,8 +182,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="{{asset('assets')}}/img/photo-1520719627573-5e2c1a6610f0.jpg">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->nama_user}}</span>
+                <img class="img-profile rounded-circle" src="{{asset('assets')}}/img/74395444_1082032215522717_1978702165600655044_n.jpg">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
