@@ -38,11 +38,6 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" name="password_user" id="Password" placeholder="Password" value="{{ @$result->password_user }}">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user" name="status_user" id="Status" placeholder="Status" value="{{ @$result->status_user }}">
                   </div>
                 </div>

@@ -18,6 +18,7 @@ Route::auth();
 
 Route::group(['middleware'=>'auth'],function(){
 	Route::get('/', 'ContentController@index');
+
 	Route::get('/akun', 'AkunController@index');
 	Route::get('/akun/add', 'AkunController@create');
 	Route::post('/akun/add', 'AkunController@store');
@@ -27,5 +28,14 @@ Route::group(['middleware'=>'auth'],function(){
 
 	Route::delete('akun/{id}/delete','AkunController@destroy');
 
-	Route::get('/transaksi','TransaksiController@index');
+	Route::get('transaksi','TransaksiController@index');
+
+	Route::get('toko','TokoController@index');
+	Route::get('toko/add','TokoController@create');
+	Route::post('toko/add', 'TokoController@store');
+
+	Route::get('toko/{id}/edit','TokoController@edit');
+	Route::patch('toko/{id}/edit','TokoController@update');
+
+	Route::delete('toko/{id}/delete','TokoController@destroy');
 });

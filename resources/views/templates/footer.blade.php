@@ -53,3 +53,4 @@
       $('#myInput').trigger('focus')
     })
   </script>
+  @stack('script')

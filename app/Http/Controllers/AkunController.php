@@ -9,11 +9,11 @@ class AkunController extends Controller
     public function index()
     {
     	$data['result'] = \App\Akun::all();
-    	return view('contents/akun')->with($data);
+    	return view('akun/index')->with($data);
     }
     public function create()
     {
-    	return view('contents/form');
+    	return view('akun/form');
     }
     public function store(Request $request)
     {
@@ -22,7 +22,18 @@ class AkunController extends Controller
 
         if ($status) return redirect('/akun')->with('success','Data Berhasil Ditambahkan');
         else return redirect('/akun')->with('error','Data Gagal Ditambahkan');
-    }
+    // }
+    // public function buatusername(Request, $request)
+    // {
+    //        $a = $request->nama_user;
+    //        $a = substr($username,0,2);
+    //        $username = $a+$request->id_user;
+    // }
+    // public function tambahakun(Request, $request)
+    // {
+    //     $input = $request->all();
+    //     $status = \App\Akun::create($input);  
+    // }
     public function edit($id)
     {
         $data['result'] = \App\Akun::where('id_user',$id)->first();
@@ -30,14 +41,13 @@ class AkunController extends Controller
     }
     public function update(Request $request,$id)
     {
-        $rules = [
-            'nama_user' => 'required|max:100',
-            'password_user' => 'required|max:100',
-            'jk_user' => 'required|max:100',
-            'alamat_user' => 'required|max:100',
-            'no_user' => 'required|max:100',
-            'status_user' => 'required|max:100'
-        ];
+        // $rules = [
+        //     'nama_user' => 'required|max:100',
+        //     'jk_user' => 'required|max:100',
+        //     'alamat_user' => 'required|max:100',
+        //     'no_user' => 'required|max:100',
+        //     'status_user' => 'required|max:100'
+        // ];
         // $this->validate($request, $rules);
 
         $input = $request->all();

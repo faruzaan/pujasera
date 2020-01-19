@@ -11,12 +11,9 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Akun</h6>
               <div class="box">
               	<div class="box-header with-border">
-              		<a href="{{url('akun/add')}}" class="btn btn-successs">
-              			<i class="fas fa-plus-square" style="margin-right: 5px;"></i>Tambah
-              		</a>
+              		<a href="{{url('akun/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Users</a>
               	</div>
               </div>
             </div>
@@ -27,7 +24,6 @@
                     <tr>
                    	  <th>No</th> 	
                       <th>Nama</th>
-                      <th>Password</th>
                       <th>JK</th>
                       <th>Alamat</th>
                       <th>No HP</th>
@@ -40,7 +36,6 @@
                   	<tr>
                   		<td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
                   		<td>{{ $row-> nama_user }}</td>
-                  		<td>{{ $row-> password_user }}</td>
                   		<td>{{ $row-> jk_user }}</td>
                   		<td>{{ $row-> alamat_user }}</td>
                   		<td>{{ $row-> no_user }}</td>

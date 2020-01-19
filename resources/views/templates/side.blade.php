@@ -9,7 +9,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fas fa-cloud-meatball"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Pujasera <br> Farhan</div>
       </a>
@@ -20,7 +20,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item  active">
         <a class="nav-link" href="{{url('/')}}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-chart-line"></i>
           <span>Main Menu</span></a>
       </li>
 
@@ -40,13 +40,13 @@
 
       <li class="nav-item">
         <a class="nav-link" href="{{ url('toko')}}">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-store-alt"></i>
           <span>Toko</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{{ url('item')}}">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-utensils"></i>
           <span>Food & Drink</span></a>
       </li>
       
