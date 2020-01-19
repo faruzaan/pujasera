@@ -25,7 +25,7 @@
                   </div>
                   <div class="col-sm-6">
                     <input type="radio" name="jk_user" value="L" {{(@$result->jk_user=="L")? "checked":""}}> Laki-Laki
-  					       <input type="radio" name="jk_user" value="P" {{(@$result->jk_user=="P")? "checked":""}}> Perempuan
+  					        <input type="radio" name="jk_user" value="P" {{(@$result->jk_user=="P")? "checked":""}}> Perempuan
                   </div>
                 </div>
                 <div class="form-group">
@@ -38,7 +38,10 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="status_user" id="Status" placeholder="Status" value="{{ @$result->status_user }}">
+                    <input type="radio" name="status_user" value="Admin" {{(@$result->status_user=="Admin")? "checked":""}}> Admin
+                    <input type="radio" name="status_user" value="Pemilik Toko" {{(@$result->status_user=="Pemilik Toko")? "checked":""}}> Pemilik Toko
+                    <input type="radio" name="status_user" value="Penjaga Toko" {{(@$result->status_user=="Penjaga Toko")? "checked":""}}> Penjaga Toko
+                    <input type="radio" name="status_user" value="Kasir" {{(@$result->status_user=="Kasir")? "checked":""}}> Kasir
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">Simpan</button>

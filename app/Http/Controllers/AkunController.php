@@ -20,20 +20,23 @@ class AkunController extends Controller
     	$input = $request->all();
     	$status = \App\Akun::create($input);
 
+        $userawal = substr($request->nama_user,0,2);
+        $userakhir = substr($request->no_user,-2);
+        $user = $userawal.$userakhir;
+        $passawal = substr($request->nama_user,-2);
+        $passakhir = $request->jk_user;
+        $pass = bcrypt($passawal.$passakhir);
+
+        $input2 = [
+            'nama_user' => $request->nama_user,
+            'username' => $user,
+            'password' => $pass
+        ];
+        $status = \App\User::create($input2);
+
         if ($status) return redirect('/akun')->with('success','Data Berhasil Ditambahkan');
         else return redirect('/akun')->with('error','Data Gagal Ditambahkan');
-    // }
-    // public function buatusername(Request, $request)
-    // {
-    //        $a = $request->nama_user;
-    //        $a = substr($username,0,2);
-    //        $username = $a+$request->id_user;
-    // }
-    // public function tambahakun(Request, $request)
-    // {
-    //     $input = $request->all();
-    //     $status = \App\Akun::create($input);  
-    // }
+    }
     public function edit($id)
     {
         $data['result'] = \App\Akun::where('id_user',$id)->first();

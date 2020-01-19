@@ -40,13 +40,13 @@
                   		<td>{{ $row-> alamat_user }}</td>
                   		<td>{{ $row-> no_user }}</td>
                   		<td>{{ $row-> status_user }}</td>
-                  		<td><a href="{{url("akun/$row->id_user/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
+                  		<td><a title="Edit" href="{{url("akun/$row->id_user/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
                   			<form action="{{url("akun/$row->id_user/delete")}}" method="POST" style="display: inline;">
                   				{{csrf_field()}}
                   				{{method_field('DELETE')}}
 
                   				<button class="btn btn-sm btn-danger">
-                  					<i class="fas fa-minus-square"></i>
+                  					<i title="Hapus" class="fas fa-minus-square"></i>
                   				</button>
                   			</form>
 

@@ -18,7 +18,13 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('assets')}}/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="{{asset('assets')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+  <style>
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+  </style>
   @stack('style')
   
 </head>

@@ -31,12 +31,13 @@
       <div class="sidebar-heading">
         Data
       </div>
-
+      @if (@auth()->user()->nama_user == "Farhan")
       <li class="nav-item">
         <a class="nav-link" href="{{ url('akun')}}">
           <i class="fas fa-user"></i>
           <span>Users</span></a>
       </li>
+      @endif
 
       <li class="nav-item">
         <a class="nav-link" href="{{ url('toko')}}">

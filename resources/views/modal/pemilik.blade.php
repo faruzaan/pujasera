@@ -27,7 +27,7 @@
                   <td>{{ $rowpem-> jk_user }}</td>
                   <td>{{ $rowpem-> no_user }}</td>
                   <td>
-                    <a href="#" class="pilih-pemilik btn btn-primary btn-user btn-block">Pilih</a>
+                    <button class="pilih-pemilik btn btn-primary btn-user btn-block">Pilih</button>
                   </td>
                 </tr>
                 @endforeach

@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-9 mb-3 mb-sm-0">
-                    <input readonly="true" type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
+                    <input type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
                   </div>
                   <button type="button" class="col-sm-3 btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#modal-pemilik">
                       Pilih Pemilik

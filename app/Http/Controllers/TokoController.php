@@ -13,7 +13,7 @@ class TokoController extends Controller
     }
     public function create()
     {
-        $datapemilik['resultpemilik']=\App\Akun::all();
+        $datapemilik['resultpemilik']=\App\Akun::where('status_user','Pemilik Toko');
     	return view('toko/form')->with($datapemilik);
     }
     public function store(Request $request)

@@ -11,12 +11,9 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Toko</h6>
               <div class="box">
               	<div class="box-header with-border">
-              		<a href="{{url('toko/add')}}" class="btn btn-successs">
-              			<i class="fas fa-plus-square" style="margin-right: 5px;"></i>Tambah
-              		</a>
+              		<a href="{{url('toko/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Toko</a>
               	</div>
               </div>
             </div>
