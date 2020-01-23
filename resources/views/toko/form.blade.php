@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-9 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
+                    <input readonly="" type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
                   </div>
                   <button type="button" class="col-sm-3 btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#modal-pemilik">
                       Pilih Pemilik
@@ -51,8 +51,8 @@
 @push('script')
   <script>
     $('.pilih-pemilik').click(function(){
-      let nama-pemilik = $(this).closest('tr').find('td:eq(0)').text();
-      $('#pemilik_toko').val(nama-pemilik);
+      let namapemilik = $(this).closest('tr').find('td:eq(0)').text();
+      $('#pemilik_toko').val(namapemilik);
       $('#modal-pemilik').modal('hide');
     });
   </script>
