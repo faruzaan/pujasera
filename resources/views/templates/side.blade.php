@@ -18,7 +18,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item  active">
+      <li class="nav-item  {{ str_contains(request()->url(), '/') ? 'active' : '' }}">
         <a class="nav-link" href="{{url('/')}}">
           <i class="fas fa-fw fa-chart-line"></i>
           <span>Main Menu</span></a>
@@ -32,20 +32,20 @@
         Data
       </div>
       @if (@auth()->user()->nama_user == "Farhan")
-      <li class="nav-item">
+      <li class="nav-item {{ str_contains(request()->url(), '/akun') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('akun')}}">
           <i class="fas fa-user"></i>
           <span>Users</span></a>
       </li>
       @endif
 
-      <li class="nav-item">
+      <li class="nav-item {{ str_contains(request()->url(), '/toko') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('toko')}}">
           <i class="fas fa-fw fa-store-alt"></i>
           <span>Toko</span></a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item {{ str_contains(request()->url(), '/item') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('item')}}">
           <i class="fas fa-fw fa-utensils"></i>
           <span>Food & Drink</span></a>

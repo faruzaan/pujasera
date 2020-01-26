@@ -22,7 +22,7 @@ class TokoController extends Controller
     	$status = \App\Toko::create($input);
 
         if ($status) return redirect('/toko')->with('success','Data Berhasil Ditambahkan');
-        else return redirect('/Toko')->with('error','Data Gagal Ditambahkan');
+        else return redirect('/toko')->with('error','Data Gagal Ditambahkan');
     }
     public function edit($id)
     {

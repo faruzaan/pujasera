@@ -19,15 +19,15 @@
                 @if (!empty($result))
                   {{method_field('patch')}}
                 @endif
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="nama_user" id="Nama" placeholder="Nama" value="{{ @$result->nama_user }}">
-                  </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="nama_user" id="Nama" placeholder="Nama" value="{{ @$result->nama_user }}">                
+                </div>
+                <div class="form-group">  
                   <div class="col-sm-6">
                     <input type="radio" name="jk_user" value="L" {{(@$result->jk_user=="L")? "checked":""}}> Laki-Laki
   					        <input type="radio" name="jk_user" value="P" {{(@$result->jk_user=="P")? "checked":""}}> Perempuan
                   </div>
-                </div>
+                </div>  
                 <div class="form-group">
                   <input type="text" class="form-control form-control-user" name="alamat_user" id="Alamat" placeholder="Alamat" value="{{ @$result->alamat_user }}">
                 </div>

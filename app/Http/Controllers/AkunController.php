@@ -40,7 +40,7 @@ class AkunController extends Controller
     public function edit($id)
     {
         $data['result'] = \App\Akun::where('id_user',$id)->first();
-        return view('contents/form')->with($data);
+        return view('akun/form')->with($data);
     }
     public function update(Request $request,$id)
     {

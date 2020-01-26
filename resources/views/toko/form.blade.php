@@ -26,9 +26,12 @@
                   <div class="col-sm-9 mb-3 mb-sm-0">
                     <input readonly="" type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
                   </div>
-                  <button type="button" class="col-sm-3 btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#modal-pemilik">
-                      Pilih Pemilik
-                  </button>
+                  @if (empty($result))
+                    <button type="button" class="col-sm-3 btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#modal-pemilik">
+                        Pilih Pemilik
+                    </button>
+                  @endif
+                  
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-user" name="no_toko" id="notoko" placeholder="No Toko" value="{{ @$result->no_toko }}">
@@ -45,7 +48,10 @@
     </div>
 
   </div>
-  @include('modal/pemilik')
+  @if (empty($result))
+    @include('modal/pemilik')
+  @endif
+  
 
 @endsection
 @push('script')
