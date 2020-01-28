@@ -14,8 +14,10 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
+                <th>Id</th>
                 <th>Nama</th>
-                <th>JK</th>                      
+                <th>JK</th>
+                <th>Alamat</th>                      
                 <th>No HP</th>
                 <th>Aksi</th>
                </tr>
@@ -23,8 +25,10 @@
               <tbody>
                 @foreach ($resultpemilik as $rowpem)
                 <tr>
+                  <td>{{ $rowpem-> id_user }}</td>
                   <td>{{ $rowpem-> nama_user }}</td>
                   <td>{{ $rowpem-> jk_user }}</td>
+                  <td>{{ $rowpem-> alamat_user }}</td>
                   <td>{{ $rowpem-> no_user }}</td>
                   <td>
                     <a href="#" class="pilih-pemilik btn btn-primary btn-user btn-block">Pilih</a>

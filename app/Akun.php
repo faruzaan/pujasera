@@ -10,5 +10,6 @@ class Akun extends Model
 
     protected $table = 'tb_user';
 
-    protected $fillable = ['nama_user','jk_user','alamat_user','no_user','status_user'];
+    protected $fillable = ['nama_user','username','password','jk_user','alamat_user','no_user','status_user','keterangan_user'
+	];
 }

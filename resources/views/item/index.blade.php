@@ -23,7 +23,7 @@
                   <thead>
                     <tr>
                    	  <th>No</th> 	
-                      <th>Id Toko</th>
+                      <th>Nama Toko</th>
                       <th>Nama</th>
                       <th>Harga</th>
                       <th>Keterangan</th>
@@ -34,7 +34,7 @@
                   	@foreach ($result as $row)
                   	<tr>
                   		<td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                  		<td>{{ $row-> id_toko }}</td>
+                  		<td>{{ $row-> nama_toko }}</td>
                   		<td>{{ $row-> nama_item }}</td>
                   		<td>{{ $row-> harga_item }}</td>
                   		<td>{{ $row-> ket_item }}</td>

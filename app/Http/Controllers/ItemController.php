@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
     public function index()
     {
-    	$data['result'] = \App\Item::all();
+    	$data['result'] = DB::table('tb_item')
+            ->join('tb_toko', 'tb_item.id_toko', '=', 'tb_toko.id_toko')
+            ->select('tb_item.*', 'tb_toko.nama_toko')
+            ->get();
     	return view('item/index')->with($data);
     }
     public function create()

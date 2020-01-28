@@ -24,10 +24,12 @@
                     <tr>
                    	  <th>No</th> 	
                       <th>Nama</th>
+                      <th>Username</th>
                       <th>JK</th>
                       <th>Alamat</th>
                       <th>No HP</th>
                       <th>Status</th>
+                      <th>Keterangan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -36,10 +38,12 @@
                   	<tr>
                   		<td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
                   		<td>{{ $row-> nama_user }}</td>
+                      <td>{{ $row-> username }}</td>
                   		<td>{{ $row-> jk_user }}</td>
                   		<td>{{ $row-> alamat_user }}</td>
                   		<td>{{ $row-> no_user }}</td>
                   		<td>{{ $row-> status_user }}</td>
+                      <td>{{ $row-> keterangan_user }}</td>
                   		<td><a title="Edit" href="{{url("akun/$row->id_user/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
                   			<form action="{{url("akun/$row->id_user/delete")}}" method="POST" style="display: inline;">
                   				{{csrf_field()}}

@@ -34,7 +34,7 @@
                   	<tr>
                   		<td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
                   		<td>{{ $row-> nama_toko }}</td>
-                  		<td>{{ $row-> pemilik_toko }}</td>
+                  		<td>{{ $row-> nama_user }}</td>
                   		<td>{{ $row-> no_toko }}</td>
                   		<td><a href="{{url("toko/$row->id_toko/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
                   			<form action="{{url("toko/$row->id_toko/delete")}}" method="POST" style="display: inline;">

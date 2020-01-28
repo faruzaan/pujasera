@@ -22,6 +22,12 @@
                 <div class="form-group">
                     <input type="text" class="form-control form-control-user" name="nama_user" id="Nama" placeholder="Nama" value="{{ @$result->nama_user }}">                
                 </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="username" id="Nama" placeholder="Username" value="{{ @$result->username }}">                
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="password" id="Nama" placeholder="Password" value="{{ @$result->password }}">                
+                </div>
                 <div class="form-group">  
                   <div class="col-sm-6">
                     <input type="radio" name="jk_user" value="L" {{(@$result->jk_user=="L")? "checked":""}}> Laki-Laki
@@ -43,6 +49,9 @@
                     <input type="radio" name="status_user" value="Penjaga Toko" {{(@$result->status_user=="Penjaga Toko")? "checked":""}}> Penjaga Toko
                     <input type="radio" name="status_user" value="Kasir" {{(@$result->status_user=="Kasir")? "checked":""}}> Kasir
                   </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-user" name="keterangan_user" id="Alamat" placeholder="Keterangan User" value="{{ @$result->keterangan_user }}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">Simpan</button>
                 <!-- <a href="login.html" class="btn btn-primary btn-user btn-block">

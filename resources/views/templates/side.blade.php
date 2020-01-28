@@ -31,14 +31,12 @@
       <div class="sidebar-heading">
         Data
       </div>
-      @if (@auth()->user()->nama_user == "Farhan")
+      @if (@auth()->user()->status_user == "Super Admin")
       <li class="nav-item {{ str_contains(request()->url(), '/akun') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('akun')}}">
           <i class="fas fa-user"></i>
           <span>Users</span></a>
       </li>
-      @endif
-
       <li class="nav-item {{ str_contains(request()->url(), '/toko') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('toko')}}">
           <i class="fas fa-fw fa-store-alt"></i>
@@ -50,7 +48,7 @@
           <i class="fas fa-fw fa-utensils"></i>
           <span>Food & Drink</span></a>
       </li>
-      
+      @endif
       <!-- Divider -->
       <hr class="sidebar-divider">
 

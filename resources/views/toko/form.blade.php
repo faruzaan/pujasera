@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-9 mb-3 mb-sm-0">
-                    <input readonly="" type="text" class="form-control form-control-user" name="pemilik_toko" id="pemilik_toko" placeholder="Pemilik Toko" value="{{ @$result->pemilik_toko }}">
+                    <input readonly="" type="text" class="form-control form-control-user" name="id_user" id="id_user" placeholder="Pemilik Toko" value="{{ @$result->id_user }}">
                   </div>
                   @if (empty($result))
                     <button type="button" class="col-sm-3 btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#modal-pemilik">
@@ -58,7 +58,7 @@
   <script>
     $('.pilih-pemilik').click(function(){
       let namapemilik = $(this).closest('tr').find('td:eq(0)').text();
-      $('#pemilik_toko').val(namapemilik);
+      $('#id_user').val(namapemilik);
       $('#modal-pemilik').modal('hide');
     });
   </script>

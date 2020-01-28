@@ -10,5 +10,5 @@ class Toko extends Model
 
     protected $table = 'tb_toko';
 
-    protected $fillable = ['nama_toko','pemilik_toko','no_toko'];
+    protected $fillable = ['id_user','nama_toko','no_toko'];
 }

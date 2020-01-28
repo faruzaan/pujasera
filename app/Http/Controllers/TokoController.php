@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TokoController extends Controller
 {
     public function index()
     {
-    	$data['result'] = \App\Toko::all();
+    	$data['result'] = DB::table('tb_toko')
+            ->join('tb_user', 'tb_toko.id_user', '=', 'tb_user.id_user')
+            ->select('tb_toko.*', 'tb_user.nama_user', 'tb_user.no_user')
+            ->get();
     	return view('toko/index')->with($data);
     }
     public function create()
     {
-        $datapemilik['resultpemilik']=\App\Akun::all();
+        // $datapemilik['resultpemilik']=\App\Akun::where('status_user','=','Pemilik Toko');
+        $datapemilik['resultpemilik'] = DB::table('tb_user')
+                     ->where('status_user', '=', 'Pemilik Toko')
+                     ->get();
     	return view('toko/form')->with($datapemilik);
     }
     public function store(Request $request)

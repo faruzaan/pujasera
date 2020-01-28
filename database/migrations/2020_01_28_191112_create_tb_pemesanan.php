@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableUser extends Migration
+class CreateTbPemesanan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTableUser extends Migration
      */
     public function up()
     {
-        Schema::create('tb_login', function (Blueprint $table) {
-            $table->Increments('id_login');
-            $table->string('nama_user',100);
-            $table->string('username',100);
-            $table->string('password',100);
-            $table->rememberToken();
+        Schema::create('tb_pemesanan', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateTableUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_login');
+        Schema::dropIfExists('tb_pemesanan');
     }
 }
