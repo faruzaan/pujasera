@@ -14,7 +14,12 @@ class CreateTbPemesanan extends Migration
     public function up()
     {
         Schema::create('tb_pemesanan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id_pemesanan');
+            $table->string('nama_pemesan');
+            $table->string('id_toko');
+            $table->string('id_item');
+            $table->string('jumlah');
+            $table->string('status_pemesanan');
             $table->timestamps();
         });
     }

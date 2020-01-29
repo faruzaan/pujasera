@@ -41,4 +41,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('item/{id}/edit','ItemController@edit');
 	Route::patch('item/{id}/edit','ItemController@update');
 	Route::delete('item/{id}/delete','ItemController@destroy');
+
+	Route::get('pemesanan','PemesananController@index');
 });

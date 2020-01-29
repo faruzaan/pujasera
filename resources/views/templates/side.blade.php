@@ -49,6 +49,20 @@
           <span>Food & Drink</span></a>
       </li>
       @endif
+      <li class="nav-item {{ str_contains(request()->url(), '/pemesanan') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('pemesanan')}}">
+          <i class="fas fa-fw fa-cart-plus"></i>
+          <span>Pemesanan</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/pembayaran') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('pembayaran')}}">
+          <i class="fas fa-fw fa-hand-holding-usd"></i>
+          <span>Pembayaran</span></a>
+      </li>
+      <!-- @if (@auth()->user()->status_user == "Kasir")
+      @endif
+      @if (@auth()->user()->status_user == "Penjaga Toko")
+      @endif -->
       <!-- Divider -->
       <hr class="sidebar-divider">
 
