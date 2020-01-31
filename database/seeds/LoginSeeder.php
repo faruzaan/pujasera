@@ -12,14 +12,14 @@ class LoginSeeder extends Seeder
     public function run()
     {
         $user = new \App\User;
-        $user->nama_user = 'Farhan';
-        $user->username_user = 'Faruzaan';
-        $user->password_user = bcrypt('Admin');
+        $user->nama_user = 'Reza';
+        $user->username = 'Reza';
+        $user->password = bcrypt('123');
         $user->jk_user = 'L';
         $user->alamat_user = 'Cianjur';
         $user->no_user = '082218334321';
-        $user->status_user = 'Super Admin';
-        $user->keterangan_user = 'Super Admin';
+        $user->status_user = 'Admin';
+        $user->keterangan_user = 'Admin';
         $user->save();
     }
 }
