@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AkunController extends Controller
 {
@@ -17,10 +18,16 @@ class AkunController extends Controller
     }
     public function store(Request $request)
     {
-        $pass = bcrypt('$request->password');
-        $request->password = $pass;
-    	$input = $request->all();
-    	$status = \App\Akun::create($input);
+        $status = \App\Akun::create([
+            'nama_user' => $request['nama_user'],
+            'username' => $request['username'],
+            'password' => Hash::make($request['password']),
+            'jk_user' => $request['jk_user'],
+            'alamat_user' => $request['alamat_user'],
+            'no_user' => $request['no_user'],
+            'status_user' => $request['status_user'],
+            'keterangan_user' => $request['keterangan_user'],
+        ]);
 
         if ($status) return redirect('/akun')->with('success','Data Berhasil Ditambahkan');
         else return redirect('/akun')->with('error','Data Gagal Ditambahkan');
