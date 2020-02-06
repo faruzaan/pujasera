@@ -13,7 +13,7 @@
             <div class="card-header py-3">
               <div class="box">
               	<div class="box-header with-border">
-              		<a href="{{url('toko/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Toko</a>
+              		<a href="{{url('pemesanan/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Toko</a>
               	</div>
               </div>
             </div>

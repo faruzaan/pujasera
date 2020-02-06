@@ -17,4 +17,9 @@ class PemesananController extends Controller
             ->get();
     	return view('pemesanan/index')->with($data);
     }
+    public function create()
+    {
+        $data['rows'] = \App\Item::all();
+        return view('pemesanan/form')->with($data);
+    }
 }

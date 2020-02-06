@@ -43,4 +43,8 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::delete('item/{id}/delete','ItemController@destroy');
 
 	Route::get('pemesanan','PemesananController@index');
+	Route::get('pemesanan/add','PemesananController@create');
+
+	Route::get('test','TestControler@index');
+	Route::get('test','TestControler@input')->name('test.input');
 });
