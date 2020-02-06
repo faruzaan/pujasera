@@ -19,6 +19,9 @@
                 @if (!empty($result))
                   {{method_field('patch')}}
                 @endif
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="nama_pemesan" id="Nama" placeholder="Nama Pemesan">
+                </div>
                 <?php
                 //Columns must be a factor of 12 (1,2,3,4,6,12)
                 $numOfCols = 2;
@@ -30,7 +33,8 @@
                   foreach ($rows as $row){
                 ?>  
                   <div class="col-md-6 mb-3 mb-sm-0">
-                      <input type="number" class="form-control form-control-user" name="id_user" id="id_user" placeholder="{{ @$row->nama_item }}" value="{{ @$result->id_user }}">
+                    <label for="{{ @$row->nama_item }}">{{ @$row->nama_item }}</label>
+                      <input type="number" class="form-control form-control-user" name="id_item" id="{{ @$row->nama_item }}" placeholder="Jumlah">
                   </div>
                 <?php
                   $rowCount++;

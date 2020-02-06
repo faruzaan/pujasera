@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TbItem extends Migration
+class CreateTbHakAkses extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class TbItem extends Migration
      */
     public function up()
     {
-        Schema::create('tb_item', function (Blueprint $table) {
-            $table->Increments('id_item');
-            $table->string('id_toko');
-            $table->string('nama_item');
-            $table->string('harga_item');
-            $table->string('ket_item');
+        Schema::create('tb_hak_akses', function (Blueprint $table) {
+            $table->string('id_hak_akses');
+            $table->string('id_jabatan');
+            $table->string('status_hak_akses');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class TbItem extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_item');
+        Schema::dropIfExists('tb_hak_akses');
     }
 }
