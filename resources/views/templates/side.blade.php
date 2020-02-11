@@ -49,15 +49,55 @@
           <span>Food & Drink</span></a>
       </li>
       @endif
-      <li class="nav-item {{ str_contains(request()->url(), '/pemesanan') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('pemesanan')}}">
-          <i class="fas fa-fw fa-cart-plus"></i>
-          <span>Pemesanan</span></a>
+      <li class="nav-item {{ str_contains(request()->url(), '/pegawai') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('pegawai')}}">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Pegawai</span></a>
       </li>
-      <li class="nav-item {{ str_contains(request()->url(), '/pembayaran') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ url('pembayaran')}}">
-          <i class="fas fa-fw fa-hand-holding-usd"></i>
-          <span>Pembayaran</span></a>
+      <li class="nav-item {{ str_contains(request()->url(), '/hakakses') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('hakakses')}}">
+          <i class="fas fa-fw fa-universal-access"></i>
+          <span>Hak Akses</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/shift') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('shift')}}">
+          <i class="fas fa-fw fa-user-clock"></i>
+          <span>Shift</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/pemilikgerai') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('pemilikgerai')}}">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Pemilik Gerai</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/gerai') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('gerai')}}">
+          <i class="fas fa-fw fa-store"></i>
+          <span>Gerai</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/kerjasama') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('kerjasama')}}">
+          <i class="fas fa-fw fa-handshake"></i>
+          <span>Kerjasama</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/menu') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('menu')}}">
+          <i class="fas fa-fw fa-book-open"></i>
+          <span>Menu</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/iuran') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('iuran')}}">
+          <i class="fas fa-fw fa-money-check-alt"></i>
+          <span>Pembayaran Iuran Gerai</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/bagihasil') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('bagihasil')}}">
+          <i class="fas fa-fw fa-balance-scale"></i>
+          <span>Bagi Hasil</span></a>
+      </li>
+      <li class="nav-item {{ str_contains(request()->url(), '/penjualan') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('penjualan')}}">
+          <i class="fas fa-fw fa-cart-plus"></i>
+          <span>Penjualan</span></a>
       </li>
       <!-- @if (@auth()->user()->status_user == "Kasir")
       @endif

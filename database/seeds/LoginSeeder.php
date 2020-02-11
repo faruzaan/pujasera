@@ -11,15 +11,15 @@ class LoginSeeder extends Seeder
      */
     public function run()
     {
-        $user = new \App\User;
-        $user->nama_user = 'Reza';
-        $user->username = 'Reza';
+        $user = new \App\Pegawai;
+        $user->id_pegawai = 'P001';
+        $user->id_jabatan = 'JB001';
+        $user->nama_pegawai = 'Farhan';
+        $user->alamat_pegawai = 'Cianjur';
+        $user->nomer_tlp = '082218334321';
+        $user->username = 'Admin';
         $user->password = bcrypt('123');
-        $user->jk_user = 'L';
-        $user->alamat_user = 'Cianjur';
-        $user->no_user = '082218334321';
-        $user->status_user = 'Admin';
-        $user->keterangan_user = 'Admin';
+        $user->status_pegawai = 'Aktif';
         $user->save();
     }
 }
