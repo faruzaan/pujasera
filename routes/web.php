@@ -45,4 +45,11 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('menu/{id}/edit','MenuController@edit');
 	Route::patch('menu/{id}/edit','MenuController@update');
 	Route::delete('menu/{id}/delete','MenuController@destroy');
+
+	Route::get('penjualan','PenjualanController@index');
+	Route::get('penjualan/add', 'PenjualanController@create');
+	Route::post('penjualan/add', 'PenjualanController@store');
+	Route::get('penjualan/{id}/edit','PenjualanController@edit');
+	Route::patch('penjualan/{id}/edit','PenjualanController@update');
+	Route::delete('penjualan/{id}/delete','PenjualanController@destroy');
 });

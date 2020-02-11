@@ -46,6 +46,7 @@
                   <label class="control-label col-sm-2">Jabatan</label>
                   <div class="col-sm-10">
                     <select name="id_jabatan" id="" class="form-control">
+                      <option value="" disabled selected hidden>Pilih</option>
                       @foreach (\App\Jabatan::all() as $jabatan)
                         <option value="{{$jabatan->id_jabatan}}" {{@$pegawai->id_jabatan == $jabatan->id_jabatan ? 'selected':''}}>{{$jabatan->nama_jabatan}}</option>
                       @endforeach

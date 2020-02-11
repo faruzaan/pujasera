@@ -21,18 +21,22 @@ class GeraiController extends Controller
     {
     	$input = $request->all();
     	$gerai = DB::table('tb_gerai')->orderBy('id_gerai','desc')->take(1)->get();
-    	$id = $gerai[0]->id_gerai;
-    	$int1 = substr($id,3,1);
-    	$int2 = substr($id,2,1);
-    	$int3 =substr($id,1,1);
-    	$int1++;
-    	if ($int1 >= 9) {
-    		$int2++;
-    	}
-    	if ($int2 >= 9) {
-    		$int3++;
-    	}
-    	$id = 'G'.$int3.$int2.$int1;
+        if (empty($gerai)) {
+            $id = "G001";
+        }else{
+            $id = $gerai[0]->id_gerai;
+            $int1 = substr($id,3,1);
+            $int2 = substr($id,2,1);
+            $int3 =substr($id,1,1);
+            $int1++;
+            if ($int1 >= 9) {
+                $int2++;
+            }
+            if ($int2 >= 9) {
+                $int3++;
+            }
+            $id = 'G'.$int3.$int2.$int1;
+        }
     	$status = \App\Gerai::create([
             'id_gerai' => $id,
             'id_pemilik' => $request['id_pemilik'],

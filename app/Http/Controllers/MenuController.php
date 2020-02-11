@@ -20,25 +20,32 @@ class MenuController extends Controller
     {
     	$input = $request->all();
     	$menu = DB::table('tb_menu')->orderBy('id_menu','desc')->take(1)->get();
-    	$id = $menu[0]->id_gerai;
-    	$int1 = substr($id,3,1);
-    	$int2 = substr($id,2,1);
-    	$int3 =substr($id,1,1);
-    	$int1++;
-    	if ($int1 >= 9) {
-    		$int2++;
-    	}
-    	if ($int2 >= 9) {
-    		$int3++;
-    	}
-    	$id = 'M'.$int3.$int2.$int1;
-    	$status = \App\Gerai::create([
+        $id = $menu[0]->id_menu;
+        $int1 = substr($id,3,1);
+        $int2 = substr($id,2,1);
+        $int3 =substr($id,1,1);
+        $int1++;
+        if ($int1 >= 9) {
+            $int2++;
+        }
+        if ($int2 >= 9) {
+            $int3++;
+        }
+        $id = 'M'.$int3.$int2.$int1;
+    	if ($request->hasFile('gambar_menu') && $request->file('gambar_menu')->isValid())
+        {
+            $filename = $id.".".$request->file('gambar_menu')->getClientOriginalExtension();
+            $request->file('gambar_menu')->storeAs('',$filename);
+            $input['gambar_menu'] = $filename;
+        }
+
+    	$status = \App\Menu::create([
             'id_menu' => $id,
             'id_gerai' => $request['id_gerai'],
             'nama_menu' => $request['nama_menu'],
             'harga_menu' => $request['harga_menu'],
             'status_menu' => $request['status_menu'],
-            'gambar_menu' => $request['gambar_menu'],
+            'gambar_menu' => $input['gambar_menu'],
         ]);
 
         if ($status) return redirect('/menu')->with('success','Data Berhasil Ditambahkan');
@@ -56,6 +63,12 @@ class MenuController extends Controller
 
         $input = $request->all();
         $result = \App\Menu::where('id_menu', $id)->first();
+        if ($request->hasFile('gambar_menu') && $request->file('gambar_menu')->isValid())
+        {
+            $filename = $result['id_menu'].".".$request->file('gambar_menu')->getClientOriginalExtension();
+            $request->file('gambar_menu')->storeAs('',$filename);
+            $input['gambar_menu'] = $filename;
+        }
         $status = $result->update($input);
 
         if ($status) return redirect('/menu')->with('success','Data Berhasil Diubah');

@@ -5,15 +5,15 @@
         <div class="container-fluid">
           @include('templates/feedback')
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tabel Menu</h1>
-          <p class="mb-4">Data Informasi Menu</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Tabel Gerai</h1>
+          <p class="mb-4">Data Informasi Gerai</a>.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <div class="box">
                 <div class="box-header with-border">
-                  <a href="{{url('menu/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Menu</a>
+                  <a href="{{url('penjualan/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Penjualan</a>
                 </div>
               </div>
             </div>
@@ -22,26 +22,30 @@
                 <table class="table table-bordered" id="data_Table" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Gambar</th>   
-                      <th>Gerai</th>
-                      <th>Nama</th>
-                      <th>Harga</th>
-                      <th>Status</th>
+                      <th>No</th>   
+                      <th>Pegawai</th>
+                      <th>Tanggal</th>
+                      <th>Total Harga</th>
+                      <th>Bayar</th>
+                      <th>Kembali</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($menu as $row)
+                    @foreach ($penjualan as $row)
                     <tr>
                       <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                      <td><img src="{{asset('uploads/'.@$row->gambar_menu)}}" width="80px" class="img" alt=""></td>
-                      <td>{{ $row->gerai->nama_gerai }}</td>
-                      <td>{{ $row-> nama_menu }}</td>
-                      <td>{{ $row-> harga_menu }}</td>
-                      <td>{{ $row-> status_menu }}</td>
-                      <td><a title="Edit" href="{{url("menu/$row->id_menu/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
-                        <form action="{{url("menu/$row->id_menu/delete")}}" method="POST" style="display: inline;">
+                      <td>{{ $row->pegawai->nama_pegawai }}</td>
+                      <td>{{ $row-> tgl_penjualan }}</td>
+                      <td>{{ $row-> total_harga }}</td>
+                      <td>{{ $row-> bayar }}</td>
+                      <td>{{ $row-> kembali }}</td>
+                      <td>
+                        <a title="Edit" href="{{url("penjualan/$row->id_penjualan/detail")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i>
+                        </a>
+                        <a title="Edit" href="{{url("penjualan/$row->id_penjualan/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i>
+                        </a>
+                        <form action="{{url("penjualan/$row->id_penjualan/delete")}}" method="POST" style="display: inline;">
                           {{csrf_field()}}
                           {{method_field('DELETE')}}
 

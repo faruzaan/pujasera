@@ -23,6 +23,7 @@
                   <label class="control-label col-sm-2">Pemilik</label>
                   <div class="col-sm-10">
                     <select name="id_pemilik" id="" class="form-control">
+                      <option value="" disabled selected hidden>Pilih</option>
                       @foreach (\App\PemilikGerai::all() as $pemilik)
                         <option value="{{$pemilik->id_pemilik}}" {{@$gerai->id_pemilik == $pemilik->id_pemilik ? 'selected':''}}>{{$pemilik->nama_pemilik}}</option>
                       @endforeach
