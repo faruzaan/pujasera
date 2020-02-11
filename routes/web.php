@@ -21,20 +21,28 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('pegawai','PegawaiController@index');
 	Route::get('pegawai/add', 'PegawaiController@create');
 	Route::post('pegawai/add', 'PegawaiController@store');
+	Route::get('pegawai/{id}/edit','PegawaiController@edit');
+	Route::patch('pegawai/{id}/edit','PegawaiController@update');
+	Route::delete('pegawai/{id}/delete','PegawaiController@destroy');
 
-	Route::get('akun', 'AkunController@index');
-	Route::get('akun/add', 'AkunController@create');
-	Route::post('akun/add', 'AkunController@store');
-	Route::get('akun/{id}/edit','AkunController@edit');
-	Route::patch('akun/{id}/edit','AkunController@update');
-	Route::delete('akun/{id}/delete','AkunController@destroy');
+	Route::get('pemilikgerai','PemilikGeraiController@index');
+	Route::get('pemilikgerai/add', 'PemilikGeraiController@create');
+	Route::post('pemilikgerai/add', 'PemilikGeraiController@store');
+	Route::get('pemilikgerai/{id}/edit','PemilikGeraiController@edit');
+	Route::patch('pemilikgerai/{id}/edit','PemilikGeraiController@update');
+	Route::delete('pemilikgerai/{id}/delete','PemilikGeraiController@destroy');
 
-	Route::get('transaksi','TransaksiController@index');
+	Route::get('gerai','GeraiController@index');
+	Route::get('gerai/add', 'GeraiController@create');
+	Route::post('gerai/add', 'GeraiController@store');
+	Route::get('gerai/{id}/edit','GeraiController@edit');
+	Route::patch('gerai/{id}/edit','GeraiController@update');
+	Route::delete('gerai/{id}/delete','GeraiController@destroy');
 
-	Route::get('toko','TokoController@index');
-	Route::get('toko/add','TokoController@create');
-	Route::post('toko/add', 'TokoController@store');
-	Route::get('toko/{id}/edit','TokoController@edit');
-	Route::patch('toko/{id}/edit','TokoController@update');
-	Route::delete('toko/{id}/delete','TokoController@destroy');
+	Route::get('menu','MenuController@index');
+	Route::get('menu/add', 'MenuController@create');
+	Route::post('menu/add', 'MenuController@store');
+	Route::get('menu/{id}/edit','MenuController@edit');
+	Route::patch('menu/{id}/edit','MenuController@update');
+	Route::delete('menu/{id}/delete','MenuController@destroy');
 });

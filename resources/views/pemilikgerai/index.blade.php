@@ -5,15 +5,15 @@
         <div class="container-fluid">
           @include('templates/feedback')
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tabel Item</h1>
-          <p class="mb-4">Data Informasi Item</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Tabel Pemilik Gerai</h1>
+          <p class="mb-4">Data Informasi Pemilik Gerai</a>.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <div class="box">
               	<div class="box-header with-border">
-              		<a href="{{url('item/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Item</a>
+              		<a href="{{url('pemilikgerai/add')}}" class="btn btn-primary btn-user btn-block mt-2">Tambah Pemilik Gerai</a>
               	</div>
               </div>
             </div>
@@ -23,23 +23,21 @@
                   <thead>
                     <tr>
                    	  <th>No</th> 	
-                      <th>Nama Toko</th>
                       <th>Nama</th>
-                      <th>Harga</th>
-                      <th>Keterangan</th>
+                      <th>Alamat</th>
+                      <th>No Telepon</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                  	@foreach ($result as $row)
+                  	@foreach ($pemilikgerai as $row)
                   	<tr>
                   		<td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                  		<td>{{ $row-> nama_toko }}</td>
-                  		<td>{{ $row-> nama_item }}</td>
-                  		<td>{{ $row-> harga_item }}</td>
-                  		<td>{{ $row-> ket_item }}</td>
-                  		<td><a title="Edit" href="{{url("item/$row->id_item/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
-                  			<form action="{{url("item/$row->id_item/delete")}}" method="POST" style="display: inline;">
+                  		<td>{{ $row-> nama_pemilik }}</td>
+                      <td>{{ $row-> alamat }}</td>
+                  		<td>{{ $row-> no_tlp }}</td>
+                  		<td><a title="Edit" href="{{url("pemilikgerai/$row->id_pemilik/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
+                  			<form action="{{url("pemilikgerai/$row->id_pemilik/delete")}}" method="POST" style="display: inline;">
                   				{{csrf_field()}}
                   				{{method_field('DELETE')}}
 

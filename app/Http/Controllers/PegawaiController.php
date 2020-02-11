@@ -49,8 +49,8 @@ class PegawaiController extends Controller
     }
     public function edit($id)
     {
-        $data['result'] = \App\Item::where('id_item',$id)->first();
-        return view('item/form')->with($data);
+        $data['pegawai'] = \App\Pegawai::where('id_pegawai',$id)->first();
+        return view('pegawai/form')->with($data);
     }
     public function update(Request $request,$id)
     {
@@ -58,18 +58,18 @@ class PegawaiController extends Controller
         // $this->validate($request, $rules);
 
         $input = $request->all();
-        $result = \App\Item::where('id_item', $id)->first();
+        $result = \App\Pegawai::where('id_pegawai', $id)->first();
         $status = $result->update($input);
 
-        if ($status) return redirect('/item')->with('success','Data Berhasil Diubah');
-        else return redirect('/item')->with('error','Data Gagal Diubah');
+        if ($status) return redirect('/pegawai')->with('success','Data Berhasil Diubah');
+        else return redirect('/pegawai')->with('error','Data Gagal Diubah');
     }
     public function destroy(Request $request, $id)
     {
-        $result = \App\Item::where('id_item',$id)->first();
+        $result = \App\Pegawai::where('id_pegawai',$id)->first();
         $status = $result->delete();
 
-        if ($status) return redirect('/item')->with('success','Data Berhasil Dihapus');
-        else return redirect('/item')->with('error','Data Gagal Dihapus');
+        if ($status) return redirect('/pegawai')->with('success','Data Berhasil Dihapus');
+        else return redirect('/pegawai')->with('error','Data Gagal Dihapus');
     }
 }

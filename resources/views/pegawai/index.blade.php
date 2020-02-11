@@ -40,8 +40,8 @@
                   		<td>{{ $row->jabatan->nama_jabatan }}</td>
                   		<td>{{ $row-> nomer_tlp }}</td>
                   		<td>{{ $row-> status_pegawai }}</td>
-                  		<td><a title="Edit" href="{{url("pegawai/$row->id_user/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
-                  			<form action="{{url("pegawai/$row->id_user/delete")}}" method="POST" style="display: inline;">
+                  		<td><a title="Edit" href="{{url("pegawai/$row->id_pegawai/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
+                  			<form action="{{url("pegawai/$row->id_pegawai/delete")}}" method="POST" style="display: inline;">
                   				{{csrf_field()}}
                   				{{method_field('DELETE')}}
 

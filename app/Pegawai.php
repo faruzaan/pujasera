@@ -10,6 +10,8 @@ class Pegawai extends Model
 
     protected $table = 'tb_pegawai';
 
+    public $incrementing = false;
+
     protected $fillable = ['id_pegawai','id_jabatan','nama_pegawai','alamat_pegawai','nomer_tlp','username','password','status_pegawai'];
     
     public function jabatan()

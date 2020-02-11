@@ -10,13 +10,13 @@
             <div class="p-5">
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">
-                {{empty($result) ? 'Tambah' : 'Edit'}}
+                {{empty($pegawai) ? 'Tambah' : 'Edit'}}
                 Pegawai</h1>
               </div>
-              <form class="user" action="{{empty($result) ? url('pegawai/add') : url("pegawai/$result->id_user/edit")}}" method="POST">
+              <form class="user" action="{{empty($pegawai) ? url('pegawai/add') : url("pegawai/$pegawai->id_pegawai/edit")}}" method="POST">
               	{{ csrf_field() }}
 
-                @if (!empty($result))
+                @if (!empty($pegawai))
                   {{method_field('patch')}}
                 @endif
                 <div class="form-group">
@@ -43,11 +43,11 @@
                   </div>
                 </div> -->
                 <div class="form-group">
-                  <label control-label col-sm-2>Jabatan</label>
+                  <label class="control-label col-sm-2">Jabatan</label>
                   <div class="col-sm-10">
                     <select name="id_jabatan" id="" class="form-control">
                       @foreach (\App\Jabatan::all() as $jabatan)
-                        <option value="{{$jabatan->id_jabatan}}">{{$jabatan->id_jabatan}}</option>
+                        <option value="{{$jabatan->id_jabatan}}" {{@$pegawai->id_jabatan == $jabatan->id_jabatan ? 'selected':''}}>{{$jabatan->nama_jabatan}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -55,8 +55,8 @@
                 <div class="form-group">  
                   <div class="col-sm-6">
                     <label for="">Status Pegawai</label><br>
-                    <input type="radio" name="status_pegawai" value="Aktif" {{(@$pegawai->jk_user=="Aktif")? "checked":""}}> Aktif
-  					        <input type="radio" name="status_pegawai" value="Tidak Aktif" {{(@$pegawai->jk_user=="Tidak Aktif")? "checked":""}}> Tidak Aktif
+                    <input type="radio" name="status_pegawai" value="Aktif" {{(@$pegawai->status_pegawai=="Aktif")? "checked":""}}> Aktif
+  					        <input type="radio" name="status_pegawai" value="Tidak Aktif" {{(@$pegawai->status_pegawai=="Tidak Aktif")? "checked":""}}> Tidak Aktif
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">Simpan</button>
