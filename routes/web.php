@@ -14,10 +14,14 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+Route::get('/', 'FeedbackController@index');
+Route::get('makasih', 'FeedbackController@makasih');
+Route::post('feedback/add', 'FeedbackController@store');
+
 Route::auth();
 
 Route::group(['middleware'=>'auth'],function(){
-	Route::get('/', 'DashboardController@index');
+	Route::get('/dashboard', 'DashboardController@index');
 	Route::get('pegawai','PegawaiController@index');
 	Route::get('pegawai/add', 'PegawaiController@create');
 	Route::post('pegawai/add', 'PegawaiController@store');
@@ -52,4 +56,9 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('penjualan/{id}/edit','PenjualanController@edit');
 	Route::patch('penjualan/{id}/edit','PenjualanController@update');
 	Route::delete('penjualan/{id}/delete','PenjualanController@destroy');
+
+	Route::get('feedback','FeedbackController@index2');
+	Route::get('feedback/{id}/edit','FeedbackController@edit');
+	Route::patch('feedback/{id}/edit','FeedbackController@update');
+	Route::delete('feedback/{id}/delete','FeedbackController@destroy');
 });

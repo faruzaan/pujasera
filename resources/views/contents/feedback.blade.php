@@ -31,7 +31,6 @@
   
 </head>
 <body id="page-top">
-@include('templates/side')
 <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
@@ -178,7 +177,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->nama_pegawai}}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">HALO</span>
                 <img class="img-profile rounded-circle" src="{{asset('assets')}}/img/74395444_1082032215522717_1978702165600655044_n.jpg">
               </a>
               <!-- Dropdown - User Information -->
@@ -207,8 +206,134 @@
 
         </nav>
         <!-- End of Topbar -->
-@yield('content')
-@include('templates/footer')
+      <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+              @include('templates/feedback')
+              <div class="row">
+                <div class="col-lg">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h4 text-gray-900 mb-4">
+                      {{empty($feedback) ? 'Tambah' : 'Edit'}}
+                      Feedback</h1>
+                    </div>
+                    <form class="user" action="{{empty($feedback) ? url('feedback/add') : url("feedback/$feedback->id_feedback/edit")}}" method="POST">
+                      {{ csrf_field() }}
+
+                      @if (!empty($feedback))
+                        {{method_field('patch')}}
+                      @endif
+                      <div class="form-group">
+                        <h1 class="h4">
+                          Seberapa Puas Anda 
+                        </h1>
+                          <input type="text" class="form-control form-control-user" name="nama_pelanggan" id="Nama" placeholder="Nama Anda" value="{{ @$feedback->nama_pelanggan }}">                
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control form-control-user" name="email" id="email" placeholder="Alamat Email Anda" value="{{ @$feedback->email }}">                
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control form-control-user" name="feedback_pelanggan" id="feedback_pelanggan" placeholder="Pesan Anda" value="{{ @$feedback->feedback }}">                
+                      </div>
+                      <div class="form-group">  
+                        <div class="col-sm-6">
+                          <label for="">Bari Kami Rating (5 Adalah Paling Puas)</label><br>
+                          <input type="radio" name="service_rating" value="1" {{(@$pegawai->rating=="1")? "checked":""}}> 1
+                          <input type="radio" name="service_rating" value="2" {{(@$pegawai->rating=="2")? "checked":""}}> 2
+                          <input type="radio" name="service_rating" value="3" {{(@$pegawai->rating=="3")? "checked":""}}> 3
+                          <input type="radio" name="service_rating" value="4" {{(@$pegawai->rating=="4")? "checked":""}}> 4
+                          <input type="radio" name="service_rating" value="5" {{(@$pegawai->rating=="4")? "checked":""}}> 5
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-user btn-block">Simpan</button>
+                      <!-- <a href="login.html" class="btn btn-primary btn-user btn-block">
+                        Tambah 
+                      </a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+          <form action="{{url('logout')}}" method="post">
+            {{csrf_field()}}
+            <button type="submit" class="btn btn-primary">
+              Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{asset('assets')}}/vendor/jquery/jquery.min.js"></script>
+  <script src="{{asset('assets')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{{asset('assets')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{{asset('assets')}}/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="{{asset('assets')}}/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{{asset('assets')}}/js/demo/chart-area-demo.js"></script>
+  <script src="{{asset('assets')}}/js/demo/chart-pie-demo.js"></script>
+  <script src="{{asset('assets')}}/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="{{asset('assets')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{{asset('assets')}}/js/demo/datatables-demo.js"></script>
+  <script src="{{asset('assets')}}/jquery-3.3.1.js"></script>
+  <script src="{{asset('assets')}}/jquery.dataTables.min.js"></script>
+  <script src="{{asset('assets')}}/dataTables.buttons.min.js"></script>
+  <script src="{{asset('assets')}}/buttons.flash.min.js"></script>
+  <script src="{{asset('assets')}}/3.1.3/jszip.min.js"></script>
+  <script src="{{asset('assets')}}/pdfmake.min.js"></script>
+  <script src="{{asset('assets')}}/vfs_fonts.js"></script>
+  <script src="{{asset('assets')}}/buttons.html5.min.js"></script>
+  <script src="{{asset('assets')}}/buttons.print.min.js"></script>
+  <script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('#data_Table').DataTable( 
+      {
+          dom: 'Bfrtip',
+          buttons: 
+          [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
+      } );
+    } );
+  </script>
+  @stack('script')
 </body>
 
 </html>

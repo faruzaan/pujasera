@@ -10,4 +10,8 @@ class DashboardController extends Controller
     {
     	return view('contents/dashboard');
     }
+    public function feedback()
+    {
+    	return view('contents/feedback');
+    }
 }

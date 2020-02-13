@@ -1,10 +1,11 @@
+
 <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTbStokMenu extends Migration
+class CreateTbFeedback extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +14,12 @@ class CreateTbStokMenu extends Migration
      */
     public function up()
     {
-        Schema::create('tb_stok_menu', function (Blueprint $table) {
-            $table->string('id_stok');
-            $table->string('id_menu');
-            $table->string('tgl_stok');
-            $table->string('jumlah_stok');
+        Schema::create('tb_feedback', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('nama_pelanggan');
+            $table->string('email');
+            $table->string('feedback');
+            $table->enum('rating', ['1', '2', '3', '4', '5']);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateTbStokMenu extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_stok_menu');
+        Schema::dropIfExists('tb_feedback');
     }
 }
