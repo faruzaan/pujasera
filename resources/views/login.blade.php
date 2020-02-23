@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin 2 - Login</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="{{asset('assets')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="{{asset('assets')}}/css/sb-admin-2.min.css" rel="stylesheet">
-
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="{{asset('assets')}}/login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/css/util.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/login/css/main.css">
+<!--===============================================================================================-->
 </head>
+<body>
 
-<body class="bg-gradient-primary">
 
-  <div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-      <div class="col-xl-10 col-lg-12 col-md-9">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg">
-                <div class="p-5">
-                  @include('templates/feedback')
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Harap Login!</h1>
-                  </div>
-                  <form class="user" action="{{url('login')}}" method="post">
-                    {{csrf_field()}}
-                    <div class="form-group">
-                      <input name="username" type="text" class="form-control form-control-user" id="user" placeholder="Masukan Username">
-                    </div>
-                    <div class="form-group">
-                      <input name="password" type="password" class="form-control form-control-user" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary btn-user btn-block">
-                      Login
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      @include('templates/feedback')
+      <form class="contact100-form validate-form" action="{{url('login')}}" method="post">
+        <span class="contact100-form-title">
+          Tolong Login!
+        </span>
+        {{csrf_field()}}
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+          <span class="label-input100">Username</span>
+          <input class="input100" type="text" name="username" placeholder="Masukan Username Anda">
+          <span class="focus-input100"></span>
         </div>
 
-      </div>
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <span class="label-input100">Password</span>
+          <input class="input100" type="password" name="password" placeholder="Masukan Password Anda">
+          <span class="focus-input100"></span>
+        </div>
 
+        <div class="container-contact100-form-btn">
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button class="contact100-form-btn">
+              <span>
+                Submit
+                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="{{asset('assets')}}/vendor/jquery/jquery.min.js"></script>
-  <script src="{{asset('assets')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="{{asset('assets')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="{{asset('assets')}}/js/sb-admin-2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/bootstrap/js/popper.js"></script>
+  <script src="{{asset('assets')}}/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/select2/select2.min.js"></script>
+  <script>
+    $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
+    });
+  </script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/daterangepicker/moment.min.js"></script>
+  <script src="{{asset('assets')}}/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="{{asset('assets')}}/login/js/main.js"></script>
 
 </body>
-
 </html>

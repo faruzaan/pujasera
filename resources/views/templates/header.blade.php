@@ -178,7 +178,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->nama_pegawai}}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{@Auth::user()->username}}</span>
                 <img class="img-profile rounded-circle" src="{{asset('assets')}}/img/74395444_1082032215522717_1978702165600655044_n.jpg">
               </a>
               <!-- Dropdown - User Information -->

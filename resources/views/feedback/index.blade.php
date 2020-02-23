@@ -37,21 +37,46 @@
                       <td>{{ $row-> email }}</td>
                       <td>{{ $row-> feedback_pelanggan }}</td>
                       <td>{{ $row-> service_rating }}</td>
-                      <td><a title="Edit" href="{{url("feedback/$row->id/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i></a>
-                        <form action="{{url("feedback/$row->id/delete")}}" method="POST" style="display: inline;">
-                          {{csrf_field()}}
-                          {{method_field('DELETE')}}
-
-                          <button class="btn btn-sm btn-danger">
+                      <td>
+                        <a title="Edit" href="{{url("feedback/$row->id/edit")}}" class="btn btn-sm btn-warning"><i class="fas fa-pen-square"></i>
+                        </a>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                        </button> -->
+                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal{{ $row-> id }}">
                             <i title="Hapus" class="fas fa-minus-square"></i>
-                          </button>
-                        </form>
+                          </a>
 
                       </td>
                     </tr>
+                    <div class="modal fade" id="exampleModal{{ $row-> id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Yakin Hapus?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                            </button>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+                            <form action="{{url("feedback/$row->id/delete")}}" method="post">
+                              {{csrf_field()}}
+                              {{method_field('DELETE')}}
+                              <button type="submit" class="btn btn-primary">
+                                Hapus
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     @endforeach
                   </tbody>
                 </table>
+                <!-- Modal -->
+
               </div>
             </div>
           </div>

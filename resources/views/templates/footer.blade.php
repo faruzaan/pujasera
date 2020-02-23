@@ -74,4 +74,5 @@
       } );
     } );
   </script>
+  
   @stack('script')

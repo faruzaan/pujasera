@@ -14,9 +14,9 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', 'FeedbackController@index');
-Route::get('makasih', 'FeedbackController@makasih');
-Route::post('feedback/add', 'FeedbackController@store');
+Route::get('/', 'FeedbackController@index'); //Route Menampilkan Halaman Pengisian Feedback
+Route::get('makasih', 'FeedbackController@makasih'); //Route Menampilkan Halaman Terima Kasih
+Route::post('feedback/add', 'FeedbackController@store'); //Route Untuk Menyimpan Data
 
 Route::auth();
 
@@ -51,14 +51,16 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::delete('menu/{id}/delete','MenuController@destroy');
 
 	Route::get('penjualan','PenjualanController@index');
-	Route::get('penjualan/add', 'PenjualanController@create');
+	// Route::get('penjualan/add', 'PenjualanController@create');
 	Route::post('penjualan/add', 'PenjualanController@store');
 	Route::get('penjualan/{id}/edit','PenjualanController@edit');
 	Route::patch('penjualan/{id}/edit','PenjualanController@update');
 	Route::delete('penjualan/{id}/delete','PenjualanController@destroy');
+	Route::get('penjualan/gerai','PenjualanController@gerai');
+	Route::get('penjualan/{id}/pilih','PenjualanController@pilihmenu');
 
-	Route::get('feedback','FeedbackController@index2');
-	Route::get('feedback/{id}/edit','FeedbackController@edit');
-	Route::patch('feedback/{id}/edit','FeedbackController@update');
-	Route::delete('feedback/{id}/delete','FeedbackController@destroy');
+	Route::get('feedback','FeedbackController@index2'); //Route Menampilkan halaman tabel feedback
+	Route::get('feedback/{id}/edit','FeedbackController@edit'); //Route Menampilkan edit data feedback dengan data dari database
+	Route::patch('feedback/{id}/edit','FeedbackController@update'); //Route Mengubah Data Feedback
+	Route::delete('feedback/{id}/delete','FeedbackController@destroy'); //Route Menghapus Data Feedback
 });

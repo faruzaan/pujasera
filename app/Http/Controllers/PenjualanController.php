@@ -11,9 +11,13 @@ class PenjualanController extends Controller
     	$data['penjualan'] = \App\Penjualan::all();
     	return view('penjualan/index')->with($data);
     }
-    public function create()
+    public function gerai(){
+        return view('penjualan/gerai');
+    }
+    public function pilihmenu($id)
     {
-    	return view('penjualan/form');
+        $data['menu'] = \App\Menu::where('id_gerai',$id)->first();
+        return view('penjualan/form')->with($data);
     }
     public function store(Request $request)
     {
